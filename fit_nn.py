@@ -86,7 +86,7 @@ def fit_model(m, max_loops=50, patience=1):
         Xt, yt = thread_train.get()
         
         # Get loss and see if it has improved. Early stop if necessary.
-        loss = history.history['val_loss'][0]
+        loss = histories[-1].history['val_loss'][0]
         if loss < best_loss:
             best_loss = loss
             count_for_patience = 0
